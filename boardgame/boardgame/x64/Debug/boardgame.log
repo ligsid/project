@@ -1,0 +1,17 @@
+﻿  Engine.cpp
+c:\dev\project\boardgame\boardgame\engine.cpp(5): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+c:\dev\project\boardgame\boardgame\engine.cpp(6): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+c:\dev\project\boardgame\boardgame\engine.cpp(7): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+  boardgame.vcxproj -> C:\Dev\project\boardgame\x64\Debug\boardgame.exe
