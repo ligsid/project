@@ -1,11 +1,23 @@
 #pragma once
 
 #include "Engine.h"
-class Button
+#include <string>
+
+
+class Engine;
+class Button:Engine
 {
 private:
-	Engine engine;
-	void isPressed();
+	sf::Texture buttontexture;
+	sf::Sprite buttonsprite(sf::Texture &texture);
+	std::string mc;
+	int mx;
+	int my;
 public:
+	Button(int coordx, int coordy, std::string c);
+	~Button(){}
+	int isMouseOnButton(int height, int width);
+	void isPressed();
+	void ButtonDraw();
 };
 

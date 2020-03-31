@@ -4,17 +4,17 @@
 #include "Player.h"
 
 
+
 class Engine
 {
-private:
-	sf::Sprite BackgroundSprite;
-	sf::Texture BackgroundTexture;
+protected:
 	sf::RenderWindow window;
-	
+private:
 	void input();
 	void update(float dt);
 	void draw();
 	void menu(sf::RenderWindow &window);
+	void play(sf::RenderWindow &window);
 	Player player;
 
 public:
