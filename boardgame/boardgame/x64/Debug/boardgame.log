@@ -1,17 +1,3 @@
-﻿  Engine.cpp
-c:\dev\project\boardgame\boardgame\engine.cpp(7): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-c:\dev\project\boardgame\boardgame\engine.cpp(8): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-c:\dev\project\boardgame\boardgame\engine.cpp(11): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
-          with
-          [
-              T=float
-          ]
+﻿  StartMenu.cpp
+c:\dev\project\boardgame\boardgame\startmenu.cpp(92): warning C4715: StartMenu::WichGoingToPressed: значение возвращается не при всех путях выполнения
   boardgame.vcxproj -> C:\Dev\project\boardgame\x64\Debug\boardgame.exe

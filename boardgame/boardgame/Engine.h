@@ -2,14 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 #include<iostream>
-#include "Clicker.h"
-
+#include "StartMenu.h"
 
 
 class Engine
 {
 private:
-	sf::RenderWindow window;
 	sf::Clock timer;
 	sf::Time updateTime;
 	float timer_time;
@@ -18,18 +16,19 @@ private:
 	void input();
 	void update(float dt);
 	void draw();
-	void menu(sf::RenderWindow &window);
 
 	bool testing;
 	size_t clicks_made = 0;
 
 	sf::Clock clock;
-
+	StartMenu startmenu;
+	sf::Event event;
 	float resx;
 	float resy;
-
+protected:
+	sf::RenderWindow window;
 public:
-	bool eventManager();
+	void menu(sf::RenderWindow &window);
 	Engine();
 	~Engine() {}
 	void start();
