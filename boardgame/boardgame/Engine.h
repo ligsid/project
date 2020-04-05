@@ -1,23 +1,35 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Player.h"
+#include<iostream>
+#include "Clicker.h"
 
 
 
 class Engine
 {
-protected:
-	sf::RenderWindow window;
 private:
+	sf::RenderWindow window;
+	sf::Clock timer;
+	sf::Time updateTime;
+	float timer_time;
+
+
 	void input();
 	void update(float dt);
 	void draw();
 	void menu(sf::RenderWindow &window);
-	void play(sf::RenderWindow &window);
-	Player player;
+
+	bool testing;
+	size_t clicks_made = 0;
+
+	sf::Clock clock;
+
+	float resx;
+	float resy;
 
 public:
+	bool eventManager();
 	Engine();
 	~Engine() {}
 	void start();
