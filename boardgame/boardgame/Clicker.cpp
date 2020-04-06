@@ -1,4 +1,5 @@
 #include "Clicker.h"
+#include "Counter.h"
 
 Clicker::Clicker(sf::RenderWindow &window) {
 
@@ -16,31 +17,32 @@ Clicker::Clicker(sf::RenderWindow &window) {
 
 void Clicker::isClicked(sf::RenderWindow &window) {
 	sf::Event event;
-
 	window.clear();
+	Counter cnt(window, clicks_made);
+	cnt.setCounter(clicks_made);
 	window.draw(coin);
 	window.display();
 
-	bool isclick = false;
 	while (window.pollEvent(event)) {
 		switch (event.type) {
 		case sf::Event::Closed:
 			window.close();
 			break;
 		case sf::Event::MouseButtonPressed:
-			if (event.mouseButton.button == sf::Mouse::Button::Left){
-				if (sf::IntRect(960 - 418 / 2, 540 - 484 / 2, 418, 540).contains(sf::Mouse::getPosition(window))) {
+			if (sf::IntRect(960 - 418 / 2, 540 - 484 / 2, 418, 540).contains(sf::Mouse::getPosition(window))) {
+				if (event.mouseButton.button == sf::Mouse::Button::Left) {
 					window.clear();
 					window.draw(coin2);
+					cnt.WhenClicked(window);
 					window.display();
-					isclick = true;
 					++clicks_made;
+					cnt.setCounter(clicks_made);
 					std::cout << clicks_made << std::endl;
 				}
-				break;
+			}
+			break;
 		default:
 			break;
-			}
 		}
 	}
 }

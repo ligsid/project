@@ -40,6 +40,7 @@ void Engine::update(float dt) {
 
 void Engine::draw() {
 	menu(window);
+	window.display();
 }
 
 void Engine::menu(sf::RenderWindow &window) {

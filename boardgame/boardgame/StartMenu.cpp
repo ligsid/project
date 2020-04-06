@@ -51,7 +51,6 @@ bool StartMenu::MenuEvents(sf::RenderWindow &window) {
 				if (event3.type == sf::Event::Closed) {
 					window.close();
 				}
-
 				clicker.isClicked(window);
 			}
 		}

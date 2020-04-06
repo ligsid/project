@@ -131,12 +131,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Clicker.cpp" />
+    <ClCompile Include="Counter.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="StartMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clicker.h" />
+    <ClInclude Include="Counter.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="StartMenu.h" />
   </ItemGroup>
