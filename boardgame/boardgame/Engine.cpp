@@ -9,6 +9,7 @@ Engine::Engine(){
 	resx = resolution.x;
 	resy = resolution.y;
 	window.create(sf::VideoMode(resolution.x, resolution.y), "Clicker Game");
+	window.setFramerateLimit(30);
 }
 
 void Engine::start() {
@@ -40,6 +41,7 @@ void Engine::update(float dt) {
 
 void Engine::draw() {
 	menu(window);
+	window.display();
 }
 
 void Engine::menu(sf::RenderWindow &window) {
