@@ -1,2 +1,3 @@
-﻿  Clicker.cpp
+﻿  StartMenu.cpp
+c:\dev\project\boardgame\boardgame\startmenu.cpp(92): warning C4715: StartMenu::WichGoingToPressed: значение возвращается не при всех путях выполнения
   boardgame.vcxproj -> C:\Dev\project\boardgame\x64\Debug\boardgame.exe
