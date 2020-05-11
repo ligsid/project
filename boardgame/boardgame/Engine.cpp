@@ -17,7 +17,7 @@ void Engine::start() {
 		float time = (float)clock.getElapsedTime().asMilliseconds();
 		clock.restart();
 		time = (float)(time * 2);
-		
+
 		window.pollEvent(event);
 		if (event.type == sf::Event::Closed) {
 			window.close();

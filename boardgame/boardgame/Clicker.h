@@ -8,7 +8,7 @@
 class Clicker
 {
 public:
-	Clicker();
+	Clicker() {}
 	Clicker(sf::RenderWindow &window);
 	void isClicked(sf::RenderWindow &window);
 

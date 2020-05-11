@@ -18,46 +18,36 @@ Shop::Shop(sf::RenderWindow &window){
 
 }
 
-int Shop::minusBuyItem(size_t clicks_made, int booster) {
-	if (clicks_made == pr_boostx2) {
-		clicks_made -= pr_boostx2;
-		return clicks_made;
+int Shop::minusBuyItem(size_t clicks_made, int booster, int numboost) {
+	if (numboost == boostx2 - 1 && clicks_made >= pr_boostx2) {
+		clicks_made = clicks_made - pr_boostx2;
 	}
-	if (clicks_made == pr_boostx3) {
-		clicks_made -= pr_boostx3;
-		return clicks_made;
+	if (numboost == boostx3 - 1 && clicks_made >= pr_boostx3) {
+		clicks_made = clicks_made - pr_boostx3;
 	}
-	if (clicks_made == pr_boostx4) {
-		clicks_made -= pr_boostx4;
-		return clicks_made;
+	if (numboost == boostx4 - 1 && clicks_made >= pr_boostx4) {
+		clicks_made = clicks_made - pr_boostx4;
 	}
-	if (clicks_made == pr_boostx5) {
-		clicks_made -= pr_boostx5;
-		return clicks_made;
+	if (numboost == boostx5 - 1 && clicks_made >= pr_boostx5) {
+		clicks_made = clicks_made - pr_boostx5;
 	}
-	else {
-		return clicks_made;
-	}
+	return clicks_made;
 }
 
-int Shop::BuyItem(size_t clicks_made, int booster) {
-	if (clicks_made == pr_boostx2) {
-		clicks_made -= pr_boostx2;
-		return booster * boostx2;
+int Shop::BuyItem(size_t clicks_made, int booster, int numboost) {
+	if (numboost == boostx2 - 2 && clicks_made >= pr_boostx2) {
+		return (boostx2 - 1);
 	}
-	if (clicks_made == pr_boostx3) {
-		clicks_made -= pr_boostx3;
-		return booster * boostx3;
+	if (numboost == boostx3 - 2 && clicks_made >= pr_boostx3) {
+		return (boostx3 - 1);
 	}
-	if (clicks_made == pr_boostx4) {
-		clicks_made -= pr_boostx4;
-		return booster * boostx4;
+	if (numboost == boostx4 - 2 && clicks_made >= pr_boostx4) {
+		return (boostx4 - 1);
 	}
-	if (clicks_made == pr_boostx5) {
-		clicks_made -= pr_boostx5;
-		return booster * boostx5;
+	if (numboost == boostx5 - 2 && clicks_made >= pr_boostx5) {
+		return (boostx5 - 1);
 	}
 	else {
-		return clicks_made;
+		return 0;
 	}
 }

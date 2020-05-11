@@ -1,3 +1,8 @@
-﻿  StartMenu.cpp
-c:\dev\project\boardgame\boardgame\startmenu.cpp(92): warning C4715: StartMenu::WichGoingToPressed: значение возвращается не при всех путях выполнения
+﻿  Shop.cpp
+c:\dev\project\boardgame\boardgame\shop.cpp(15): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(34): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(39): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(42): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(45): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(48): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
   boardgame.vcxproj -> C:\Dev\project\boardgame\x64\Debug\boardgame.exe

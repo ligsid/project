@@ -20,8 +20,8 @@ public:
 
 	Shop(sf::RenderWindow &window);
 
-	int BuyItem(size_t clicks_made, int booster);
-	int minusBuyItem(size_t clicks_made, int booster);
+	int BuyItem(size_t clicks_made, int booster, int numboost);
+	int minusBuyItem(size_t clicks_made, int booster, int numboost);
 private:
 	size_t counter = 0;
 	sf::Font font;
