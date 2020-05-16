@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include<iostream>
 #include "StartMenu.h"
+#include "Clicker.h"
+#include "Shop.h"
 
 
 class Engine
@@ -21,7 +23,9 @@ private:
 	size_t clicks_made = 0;
 
 	sf::Clock clock;
+
 	StartMenu startmenu;
+	
 	sf::Event event;
 	float resx;
 	float resy;
@@ -32,5 +36,6 @@ public:
 	Engine();
 	~Engine() {}
 	void start();
+	void ClickerInit(sf::RenderWindow &window);
 };
 

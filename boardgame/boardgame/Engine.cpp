@@ -1,6 +1,6 @@
 #include "Engine.h"
 #include<iostream>
-
+#include "Counter.h"
 
 Engine::Engine(){
 	sf::Vector2f resolution;
@@ -14,19 +14,17 @@ Engine::Engine(){
 
 void Engine::start() {
 	while (window.isOpen()) {
-		float time = (float)clock.getElapsedTime().asMilliseconds();
-		clock.restart();
-		time = (float)(time * 2);
-
 		window.pollEvent(event);
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
 		input();
-		update(time);
 		draw();
-		
 	}
+}
+
+void Engine::ClickerInit(sf::RenderWindow &window) {
+
 }
 
 void Engine::input() {
@@ -36,7 +34,7 @@ void Engine::input() {
 }
 
 void Engine::update(float dt) {
-	//player.update(dt);
+	
 }
 
 void Engine::draw() {
@@ -50,7 +48,7 @@ void Engine::menu(sf::RenderWindow &window) {
 	int menuNum = 0;
 
 
-	while (isMenu) {
+	while (startmenu.MenuEvents(window)) {
 		window.clear();
 
 		window.pollEvent(event);
@@ -58,7 +56,6 @@ void Engine::menu(sf::RenderWindow &window) {
 			window.close();
 		}
 
-		isMenu = startmenu.MenuEvents(window);
 		startmenu.draw(window);
 	}
 }

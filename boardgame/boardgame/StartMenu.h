@@ -21,5 +21,7 @@ private:
 	int selectedItemIndex;
 	sf::Text menu[3];
 	sf::Font font;
+
+	size_t save[2] = { 0, 1 };
 };
 

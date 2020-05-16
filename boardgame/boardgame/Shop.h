@@ -19,6 +19,7 @@ public:
 	size_t pr_boostx5 = 15000;
 
 	Shop(sf::RenderWindow &window);
+	int WichGoingToPressed(sf::RenderWindow &window);
 
 	int BuyItem(size_t clicks_made, int booster, int numboost);
 	int minusBuyItem(size_t clicks_made, int booster, int numboost);
