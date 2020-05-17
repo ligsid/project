@@ -16,23 +16,23 @@ Clicker::Clicker(sf::RenderWindow &window, size_t cm, size_t boost) {
 	coin_texture.loadFromFile("assets/coinframes.png");
 	coin.setTexture(coin_texture);
 	coin.setTextureRect(sf::IntRect(0, 0, 418, 484));
-	coin.setPosition(960 - 418 / 2, 540 - 484 / 2);
+	coin.setPosition(512 - 418, 384 - 484);
 
-
+	coin_texture2.loadFromFile("assets/game.png");
+	coin2.setTexture(coin_texture2);
 }
+
+
 void Clicker::isClicked(sf::RenderWindow &window) {
 	timer = clock.getElapsedTime();
 	sf::Event event;
-
+	window.draw(coin2);
 	Counter cnt(window, clicks_made);
 
 	cnt.setCounter(clicks_made);
 
 	coin.setTextureRect(sf::IntRect(0, 0, 418, 484));
-	coin.setPosition(960 - 418 / 2, 540 - 484 / 2);
-
-	window.draw(coin);
-	window.display();
+	coin.setPosition(512 - 418/2, 384 - 484/2);
 
 	if (timer.asSeconds() >= sf::seconds(1).asSeconds()) {
 		clicks_per_sec += booster;
@@ -42,6 +42,10 @@ void Clicker::isClicked(sf::RenderWindow &window) {
 		clicks_per_sec = 0;
 	}
 
+
+	window.draw(coin);
+	window.display();
+
 	while (window.pollEvent(event)) {
 			switch (event.type) {
 			case sf::Event::Closed:
@@ -49,14 +53,16 @@ void Clicker::isClicked(sf::RenderWindow &window) {
 				break;
 			case sf::Event::MouseButtonPressed:
 				if (event.mouseButton.button == sf::Mouse::Button::Left) {
-					if (sf::IntRect(960 - 418 / 2, 540 - 484 / 2, 418, 540).contains(sf::Mouse::getPosition(window))) {
+					if (sf::IntRect(512 - 418 / 2, 384 - 484 / 2, 418, 540).contains(sf::Mouse::getPosition(window))) {
 						coin.setTextureRect(sf::IntRect(418, 0, 370, 428));
-						coin.setPosition(960 - 370 / 2, 540 - 428 / 2);
+						coin.setPosition(512 - 370 / 2, 384 - 428 / 2);
 						cnt.WhenClicked(window);
 						++clicks_made;
 						cnt.setCounter(clicks_made);
 						std::cout << clicks_made << std::endl;
 						window.clear();
+						window.draw(coin2);
+						cnt.drawCnt(window);
 						window.draw(coin);
 						window.display();
 					}

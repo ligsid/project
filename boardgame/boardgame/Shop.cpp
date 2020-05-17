@@ -10,9 +10,9 @@ Shop::Shop(sf::RenderWindow &window){
 
 	for (int i = 0; i < 4; i++) {
 		text[i].setFont(font);
-		text[i].setFillColor(sf::Color::White);
+		text[i].setFillColor(sf::Color::Black);
 		text[i].setString(text_string[i]);
-		text[i].setPosition(940, i*100+340);
+		text[i].setPosition(512, i*100 + 250);
 	}
 }
 
@@ -23,6 +23,7 @@ void Shop::shop_draw(sf::RenderWindow &window) {
 }
 int Shop::BuyItem(size_t clicks_made, int booster, int numboost) {
 	if (clicks_made >= pr_boost[numboost]) {
+		text[numboost].setFillColor(sf::Color::Green);
 		return booster += boost[numboost];
 	}
 	else {
@@ -39,27 +40,27 @@ int Shop::minusBuyItem(size_t clicks_made, int booster, int numboost) {
 }
 
 int Shop::WichGoingToPressed(sf::RenderWindow &window) {
-	if (sf::IntRect(940, 340, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(512, 250, 160, 40).contains(sf::Mouse::getPosition(window))) {
 		text[0].setFillColor(sf::Color::Red);
 		return 0;
 	}
-	if (sf::IntRect(940,440, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(512, 350, 160, 40).contains(sf::Mouse::getPosition(window))) {
 		text[1].setFillColor(sf::Color::Red);
 		return 1;
 	}
-	if (sf::IntRect(940,540, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(512, 450, 160, 40).contains(sf::Mouse::getPosition(window))) {
 		text[2].setFillColor(sf::Color::Red);
 		return 2;
 	}
-	if (sf::IntRect(940,640, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(512, 550, 160, 40).contains(sf::Mouse::getPosition(window))) {
 		text[3].setFillColor(sf::Color::Red);
 		return 3;
 	}
 	else{
-		text[0].setFillColor(sf::Color::White);
-		text[1].setFillColor(sf::Color::White);
-		text[2].setFillColor(sf::Color::White);
-		text[3].setFillColor(sf::Color::White);
+		text[0].setFillColor(sf::Color::Black);
+		text[1].setFillColor(sf::Color::Black);
+		text[2].setFillColor(sf::Color::Black);
+		text[3].setFillColor(sf::Color::Black);
 	}
 	return 4;
 }

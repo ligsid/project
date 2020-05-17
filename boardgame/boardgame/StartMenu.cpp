@@ -4,10 +4,10 @@
 #include "Shop.h"
 
 StartMenu::StartMenu() {
-	aboutTexture.loadFromFile("assets/about.jpg");
+	aboutTexture.loadFromFile("assets/shop.jpg");
 	about.setTexture(aboutTexture);
 
-	background.loadFromFile("assets/BackGround.jpg");
+	background.loadFromFile("assets/startmenu.jpg");
 	menuBg.setTexture(background);
 
 	font.loadFromFile("font.ttf");
@@ -15,18 +15,18 @@ StartMenu::StartMenu() {
 	menu[0].setFont(font);
 	menu[0].setFillColor(sf::Color::White);
 	menu[0].setString("Start");
-	menu[0].setPosition(940, 440);
+	menu[0].setPosition(470, 250);
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
 	menu[1].setString("Shop");
-	menu[1].setPosition(940, 540);
+	menu[1].setPosition(470, 320);
 
 
 	menu[2].setFont(font);
 	menu[2].setFillColor(sf::Color::White);
 	menu[2].setString("Exit");
-	menu[2].setPosition(940, 640);
+	menu[2].setPosition(470, 390);
 
 }
 
@@ -73,10 +73,12 @@ bool StartMenu::MenuEvents(sf::RenderWindow &window) {
 					window.close();
 				}
 				numboost = shop.WichGoingToPressed(window);
+				if (event2.mouseButton.button == sf::Mouse::Button::Left) {
+					save[1] = shop.BuyItem(save[0], save[1], numboost);
+					save[0] = shop.minusBuyItem(save[0], save[1], numboost);
+				}
 				shop.shop_draw(window);
 				window.display();
-				save[1] = shop.BuyItem(save[0], save[1], numboost);
-				save[0] = shop.minusBuyItem(save[0], save[1], numboost);
 			}
 		}
 		if (menuNum == 3) {
@@ -87,18 +89,17 @@ bool StartMenu::MenuEvents(sf::RenderWindow &window) {
 	return isMenu;
 }
 
-// разобраться с подсветкой
 
 int StartMenu::WichGoingToPressed(sf::RenderWindow &window) {
-	if (sf::IntRect(940, 440, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(470, 250, 100, 25).contains(sf::Mouse::getPosition(window))) {
 		menu[0].setFillColor(sf::Color::Red);
 		return 1;
 	}
-	if (sf::IntRect(920, 540, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(470, 320, 100, 25).contains(sf::Mouse::getPosition(window))) {
 		menu[1].setFillColor(sf::Color::Red);
 		return 2;
 	}
-	if (sf::IntRect(940, 640, 160, 40).contains(sf::Mouse::getPosition(window))) {
+	if (sf::IntRect(470, 390, 100, 25).contains(sf::Mouse::getPosition(window))) {
 		menu[2].setFillColor(sf::Color::Red);
 		return 3;
 	}

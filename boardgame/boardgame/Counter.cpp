@@ -5,15 +5,15 @@ Counter::Counter(sf::RenderWindow &window, size_t counter) {
 	cnt = counter;
 	font.loadFromFile("font.ttf");
 	text.setFont(font);
-	text.setFillColor(sf::Color::White);
+	text.setFillColor(sf::Color::Yellow);
 	text.setString(std::to_string(cnt));
-	text.setPosition(960 + 250, 540 + 250);
+	text.setPosition(512 + 250, 384 + 250);
 	window.draw(text);
 }
 
 void Counter::WhenClicked(sf::RenderWindow &window) {
 	text.setString(std::to_string(cnt));
-	drawCnt(window);
+	//drawCnt(window);
 }
 
 void Counter::drawCnt(sf::RenderWindow &window) {

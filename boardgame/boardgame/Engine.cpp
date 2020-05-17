@@ -1,5 +1,5 @@
 #include "Engine.h"
-#include<iostream>
+#include <iostream>
 #include "Counter.h"
 
 Engine::Engine(){
@@ -8,7 +8,7 @@ Engine::Engine(){
 	resolution.y = sf::VideoMode::getDesktopMode().height;
 	resx = resolution.x;
 	resy = resolution.y;
-	window.create(sf::VideoMode(resolution.x, resolution.y), "Clicker Game");
+	window.create(sf::VideoMode(1024, 768), "Clicker Game");
 	window.setFramerateLimit(30);
 }
 
