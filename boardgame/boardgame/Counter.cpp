@@ -7,7 +7,7 @@ Counter::Counter(sf::RenderWindow &window, size_t counter) {
 	text.setFont(font);
 	text.setFillColor(sf::Color::Yellow);
 	text.setString(std::to_string(cnt));
-	text.setPosition(512 + 250, 384 + 250);
+	text.setPosition(512 + 257, 380 + 250);
 	window.draw(text);
 }
 
