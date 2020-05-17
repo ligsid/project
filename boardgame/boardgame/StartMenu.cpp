@@ -63,17 +63,20 @@ bool StartMenu::MenuEvents(sf::RenderWindow &window) {
 		}
 		if (menuNum == 2) {
 			window.clear();
-			window.draw(about);
 			Shop shop(window);
 			sf::Event event2;
+			int numboost = 0;
 			while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+				window.draw(about);
 				window.pollEvent(event2);
 				if (event2.type == sf::Event::Closed) {
 					window.close();
 				}
-				int i = shop.WichGoingToPressed(window);
-				save[1] += shop.BuyItem(clicker.getCM(), clicker.getbooster(), i);
-				save[0] = shop.minusBuyItem(clicker.getCM(), clicker.getbooster(), i);
+				numboost = shop.WichGoingToPressed(window);
+				shop.shop_draw(window);
+				window.display();
+				save[1] = shop.BuyItem(save[0], save[1], numboost);
+				save[0] = shop.minusBuyItem(save[0], save[1], numboost);
 			}
 		}
 		if (menuNum == 3) {

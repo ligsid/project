@@ -13,53 +13,53 @@ Shop::Shop(sf::RenderWindow &window){
 		text[i].setFillColor(sf::Color::White);
 		text[i].setString(text_string[i]);
 		text[i].setPosition(940, i*100+340);
+	}
+}
+
+void Shop::shop_draw(sf::RenderWindow &window) {
+	for (int i = 0; i < 4; i++) {
 		window.draw(text[i]);
 	}
-	window.display();
 }
-
-int Shop::minusBuyItem(size_t clicks_made, int booster, int numboost) {
-	if (numboost == boostx2 - 1 && clicks_made >= pr_boostx2) {
-		clicks_made = clicks_made - pr_boostx2;
-	}
-	if (numboost == boostx3 - 1 && clicks_made >= pr_boostx3) {
-		clicks_made = clicks_made - pr_boostx3;
-	}
-	if (numboost == boostx4 - 1 && clicks_made >= pr_boostx4) {
-		clicks_made = clicks_made - pr_boostx4;
-	}
-	if (numboost == boostx5 - 1 && clicks_made >= pr_boostx5) {
-		clicks_made = clicks_made - pr_boostx5;
-	}
-	return clicks_made;
-}
-
 int Shop::BuyItem(size_t clicks_made, int booster, int numboost) {
-	if (numboost == boostx2 - 1 && clicks_made >= pr_boostx2) {
-		return (boostx2 - 1);
-	}
-	if (numboost == boostx3 - 1 && clicks_made >= pr_boostx3) {
-		return (boostx3 - 1);
-	}
-	if (numboost == boostx4 - 1 && clicks_made >= pr_boostx4) {
-		return (boostx4 - 1);
-	}
-	if (numboost == boostx5 - 1 && clicks_made >= pr_boostx5) {
-		return (boostx5 - 1);
+	if (clicks_made >= pr_boost[numboost]) {
+		return booster += boost[numboost];
 	}
 	else {
-		return 0;
+		return booster;
+	}
+}
+int Shop::minusBuyItem(size_t clicks_made, int booster, int numboost) {
+	if (clicks_made >= pr_boost[numboost]) {
+		return clicks_made -= pr_boost[numboost];
+	}
+	else {
+		return clicks_made;
 	}
 }
 
 int Shop::WichGoingToPressed(sf::RenderWindow &window) {
-	for (int i = 0; i < 4; i++) {
-		if (sf::IntRect(940, i * 100 + 340, 160, 40).contains(sf::Mouse::getPosition(window))) {
-			text[i].setFillColor(sf::Color::Red);
-			return i+1;
-		}
-		else {
-			text[i].setFillColor(sf::Color::White);
-		}
+	if (sf::IntRect(940, 340, 160, 40).contains(sf::Mouse::getPosition(window))) {
+		text[0].setFillColor(sf::Color::Red);
+		return 0;
 	}
+	if (sf::IntRect(940,440, 160, 40).contains(sf::Mouse::getPosition(window))) {
+		text[1].setFillColor(sf::Color::Red);
+		return 1;
+	}
+	if (sf::IntRect(940,540, 160, 40).contains(sf::Mouse::getPosition(window))) {
+		text[2].setFillColor(sf::Color::Red);
+		return 2;
+	}
+	if (sf::IntRect(940,640, 160, 40).contains(sf::Mouse::getPosition(window))) {
+		text[3].setFillColor(sf::Color::Red);
+		return 3;
+	}
+	else{
+		text[0].setFillColor(sf::Color::White);
+		text[1].setFillColor(sf::Color::White);
+		text[2].setFillColor(sf::Color::White);
+		text[3].setFillColor(sf::Color::White);
+	}
+	return 4;
 }

@@ -1,4 +1,31 @@
-﻿  StartMenu.cpp
+﻿  Clicker.cpp
+c:\dev\project\boardgame\boardgame\clicker.cpp(6): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  Engine.cpp
+c:\dev\project\boardgame\boardgame\engine.cpp(7): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+c:\dev\project\boardgame\boardgame\engine.cpp(8): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+c:\dev\project\boardgame\boardgame\engine.cpp(11): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+  Shop.cpp
+c:\dev\project\boardgame\boardgame\shop.cpp(15): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(26): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(34): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\shop.cpp(37): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+  StartMenu.cpp
 c:\dev\project\boardgame\boardgame\startmenu.cpp(57): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-c:\dev\project\boardgame\boardgame\startmenu.cpp(107): warning C4715: StartMenu::WichGoingToPressed: значение возвращается не при всех путях выполнения
+c:\dev\project\boardgame\boardgame\startmenu.cpp(78): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+c:\dev\project\boardgame\boardgame\startmenu.cpp(79): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  main.cpp
+  Создание кода...
+c:\dev\project\boardgame\boardgame\startmenu.cpp(110): warning C4715: StartMenu::WichGoingToPressed: значение возвращается не при всех путях выполнения
   boardgame.vcxproj -> C:\Dev\project\boardgame\x64\Debug\boardgame.exe

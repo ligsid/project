@@ -8,19 +8,13 @@
 class Shop
 {
 public:
-	size_t boostx2 = 2;
-	size_t boostx3 = 3;
-	size_t boostx4 = 4;
-	size_t boostx5 = 5;
+	size_t boost[5] = { 2,3,4,5,0 };
 
-	size_t pr_boostx2 = 50;
-	size_t pr_boostx3 = 5000;
-	size_t pr_boostx4 = 10000;
-	size_t pr_boostx5 = 15000;
+	size_t pr_boost[5] = { 50, 5000, 10000, 150000, 0};
 
 	Shop(sf::RenderWindow &window);
 	int WichGoingToPressed(sf::RenderWindow &window);
-
+	void shop_draw(sf::RenderWindow &window);
 	int BuyItem(size_t clicks_made, int booster, int numboost);
 	int minusBuyItem(size_t clicks_made, int booster, int numboost);
 private:
